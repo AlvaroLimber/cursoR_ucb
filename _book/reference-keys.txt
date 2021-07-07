@@ -1,0 +1,16 @@
+análisis-de-datos-estadísticos-básico-en-r
+introducción-a-r-e-investigación-reproducible
+estructuras-homogéneas
+estructuras-heterogéneas
+indexación
+funciones-básicas-familia-apply
+programando-funciones
+bucles-y-condiciones
+importación-de-datos-y-exploración
+gramática-de-datos-y-estadística-descriptiva
+estimación-de-encuestas-por-muestreo
+gráficos-con-r-base
+gráficos-con-ggplot-1
+gráficos-con-ggplot-2
+rmarkdown
+flexdashboard
