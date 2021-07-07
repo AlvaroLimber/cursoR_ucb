@@ -1,6 +1,338 @@
 # Análisis de datos estadísticos básico en R
 
 ## Introducción a R e investigación reproducible
+
+### ¿Qué es R?
+
+> R es un software de libre distribución
+
+![Comparación perfecta](images/r.jpg)
+
+![Ciencia de datos](images/ds.jpg)
+
+### Algo de historia de R
+
+  * R es el hermano de S
+  * S es un lenguaje de programación estadística desarrollado por John Chambers de Bell Labs
+  * El objetivo de S era “convertir las ideas en el software, de forma rápida y fielmente”
+  * S fue creado en 1976 y se reinvento 1988 introduciendo muchos cambios
+  * En 1993, StatSci (fabricante de S-Plus) adquieren licencia exclusiva a S
+  * S-Plus integra S con una interfaz gráfica de usuario agradable y pleno apoyo al cliente
+  * R Fue creado por Ross Ihaka y Robert Gentleman de la University of Auckland, New Zealand
+
+### Acerca de R
+
+  * El proyecto R inicio en 1991
+  * R apareció por primera vez en 1996 como un software de código abierto!
+  * Altamente personalizable a través de paquetes
+  * La comunidad R, se basa en el poder de la colaboración con miles de paquetes de libre disposición
+  * Existen muchas interfaces gráficas de usuario de R libres y comerciales (por ejemplo R Studio y Revolución)
+
+### ¿Qué es R?
+
+R es un conjunto integrado de servicios de software para la manipulación de datos, cálculo y representación gráfica. Incluye:
+
+  * instalación sencilla y un fácil almacenamiento de datos
+  * un conjunto de operadores para los cálculos en arrays, particularmente en las matrices
+  * facilidad en los gráficos y el análisis de datos y
+  * bien desarrollado, lenguaje de programación sencillo y eficaz que incluye condicionales, bucles, funciones recursivas definidos por el usuario.
+  * Altamente intuitivo
+
+> A pesar de ser libre y de código abierto, R es ampliamente utilizado por los analistas de datos dentro de las empresas y el mundo académico. (R en the NY Times)
+
+Ver [NY Times](https://www.nytimes.com/2009/01/07/technology/business-computing/07program.html?pagewanted=all&_r=0) artículo.
+
+### Algunas referencias
+
+  * aRrgh: a newcomer's (angry) guide to R by Tim Smith and Kevin Ushey
+  * Introductory Statistics with by Peter Dalgaard
+  * R tarjeta de comandos http://cran.r-project.org/doc/contrib/Short-refcard.pdf
+  * Tutorial de R http://www.cyclismo.org/tutorial/R/
+  * R project and Bioconductor
+
+Más avanzado, o basado en su interés:
+
+  * Hadley Wickham's book
+
+### RStudio
+
+RStudio es un ambiente libre y abierto de desarrollo de código integrado.
+
+  * multiplataforma
+  * El resaltado de sintaxis, completado de código, y la sangría inteligente
+  * gestionar fácilmente múltiples directorios de trabajo
+  * Flexible para el manejo de gráficos
+  * Integrado con Knitr
+  * Integrado con Git
+  
+### Instalación y usos
+
+  * R-CRAN https://cran.r-project.org/ (elija el Sistema operativo, descargue y siguiente, siguiente…)
+  * R-Studio https://www.rstudio.com/ (elija el Sistema operativo, descargue y siguiente, siguiente…)
+  * https://rstudio.cloud/ Para trabajar en línea
+  
+Nota: Para actualizar ambos paquetes: descargue la nueva versión e instale (las librerías no sufren cambios).
+
+### R básico
+
+R es una calculadora demasiado grande
+
+```{r}
+123+456
+4657*89
+12/34
+2443-3434
+```
+
+#### Lógica de los comandos en R
+
+Como entiende R los comandos
+
+ > comando(argumentos, argumentos, ...)
+
+Advertencia:
+
+  * No es posible resumir un comando
+  * R distingue mayúscula de minúscula
+  * Siempre cerrar los paréntesis
+  * R entiende el orden de los argumentos o su nombre clave
+
+Comando para pedir ayuda
+
+```{r,eval=F}
+?mean # comando para pedir ayuda
+?lm
+```
+
+Escribir varios comandos en una sola línea.
+
+```{r}
+123*56 ; 435+3544 ; 454+56
+#este es un comentario
+1+4;78+89
+```
+
+
+#### Palabras reservadas y simbolos especiales de R
+
+  * NA: datos perdidos
+  * NULL: datos nulos
+  * Inf -Inf: Infinito
+  * #: comentario en el código
+  * TRUE (T), FALSE (F): valores lógicos
+  * NaN: not a number
+  * ?: Ayuda
+  * x, ,x + y, x - y ,x * y ,x / y ,x ^ y (**),x %% y (mod) ,x %/% y (div int)
+  * ! x, .x & y ,x && y ,x | y ,x || y
+  * >, <, >=, <=
+  
+#### Símbolos Lógicos
+
+```{r}
+!(5>6) # negación
+2^2 == 4 # igualdad
+2^2 != 4 # desigualdad
+(5>6) & (2^2==4) # y lógico
+(5>6) | (2^2==4) # ó lógico
+
+(5>6) && (2^2==4) # y lógico
+(5>6) || (2^2==4) # ó lógico
+
+5 >= 5
+5 <= 5
+```
+
+#### Asignación o creación de objetos (estructuras, variables)
+
+```{r}
+x<-5
+y=10
+15->z
+x1<<-20
+x2<-"Hola"
+x3<-'hola'
+z*y^x
+x1+z
+x4<-(4>5)
+x5<-(y>x^2)
+```
+
+Trate de usar nombres significativos! Miren esto:
+
+[Hadley Wickham's book](http://adv-r.had.co.nz/)
+[Naming](https://guiquanz.gitbooks.io/google-cc-style-guide/content/ebook/Naming.html)
+
+#### Clases en R
+
+```{r}
+y1<-50
+y2<-"hola"
+y3<-(56>60)
+y4<-NA  
+y5<-NULL
+
+class(y1)
+class(y2)
+class(y3)
+class(y4)
+class(y5)
+
+typeof(y1)
+typeof(y2)
+typeof(y3)
+typeof(y4)
+typeof(y5)
+
+z<-"12314234"
+class(z)
+z2<-as.numeric(z)
+class(z2)
+# as.character
+```
+
+#### Algunas comandos adicionales
+
+```{r}
+rm(y) # eliminar objetos
+rm(y1,y2,y3,y4)
+
+# listando los objetos en memoria
+ls()
+# remover todos los objetos en memoria
+rm(list=ls())
+```
+
+### Investigación reproducible con R Markdown 
+
+**"R Markdown"** se introdujo por primera vez en el paquete knitr a principios de 2012. La idea era incrustar fragmentos de código (de R u otros) en los documentos de Markdown. De hecho, knitr soportó varios lenguajes de autoría desde el principio además de Markdown, incluidos LaTeX, HTML, AsciiDoc, reStructuredText y Textile.
+
+Markdown se ha convertido en el formato de documento más popular. La simplicidad de Markdown se destaca claramente entre estos formatos de documentos.
+
+#### Instalación
+
+```{r,eval=F}
+install.packages('rmarkdown')
+
+# Si se prefiere la versión en desarrollo
+if (!requireNamespace("devtools"))
+  install.packages('devtools')
+devtools::install_github('rstudio/rmarkdown')
+```
+
+Si el objetivo es usar Markdown para generar documentos PDF se necesita instalar Latex.
+
+Existen cheatsheets utiles para usar markdown, como: [cheatsheets](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+
+#### YAML Header
+Al inicio del archivo y entre las lineas ---
+
+```{r,eval=FALSE}
+---
+title: Mi documento
+author: Juan Perez
+date: Marzo 22, 20220
+output: html_document
+---
+```
+
+#### Sintaxis básica
+
+Énfasis sobre el texto,
+```{r,eval=FALSE}
+*italic*   **bold**
+_italic_   __bold__
+```
+
+Secciones, 
+
+```{r,eval=FALSE}
+# Header 1
+## Header 2
+### Header 3
+```
+
+Items (viñetas) no ordenadas y ordenadas,
+
+```{r,eval=FALSE}
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+```
+
+Palabras clave con referencias web,
+
+```{r,eval=FALSE}
+[linked phrase](http://example.com)
+```
+
+Imágenes simples o con titulo,
+
+```{r,eval=FALSE}
+![](http://example.com/logo.png)
+
+![optional caption text](figures/img.png)
+```
+
+Blockquotes
+
+> It's always better to give than to receive.
+
+```{r,eval=FALSE}
+A friend once said:
+
+> It's always better to give than to receive.
+```
+
+Ecuaciones en linea y en párrafo,
+
+En linea $\sum_i{x^2}$ o en párrafo:
+
+$$\sum_i{x^2}$$
+
+```{r,eval=FALSE}
+$equation$
+
+$$ equation $$
+```
+
+#### Tipos de documentos
+
+  * beamer_presentation
+  * github_document
+  * html_document
+  * ioslides_presentation
+  * latex_document
+  * md_document
+  * odt_document
+  * pdf_document
+  * powerpoint_presentation
+  * rtf_document
+  * slidy_presentation
+  * word_document
+  
+#### Chunks
+
+Los chunks son entornos que permiten incluir código en R dentro de las distintos tipos de documentos que genera Rmarkdown, los chunks inician con ````  ```{r} y termina con ``` ````, también es posible introducir chunks en linea con el texto, esto se logra introduciendo 
+
+```{r,eval=F}
+Texto ... `r <code>` ... texto
+```
+
+La parte {r} del chunk sirve para introducir las distintas opciones que va a contener ese chunk, las opciones disponibles son:
+
+  * echo (default = TRUE), muestra el código del chunk en la salida del documento
+  * eval (default = TRUE), corre el código del chunk
+  * message (default = TRUE), muestra los mensajes que genera el chunk
+
+Existen funciones útiles para mejorar las salidas de tablas, tales como xtable y kable de la librería knitr.
+
 ## Estructuras homogéneas
 ## Estructuras heterogéneas
 ## Indexación
