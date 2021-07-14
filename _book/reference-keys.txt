@@ -23,8 +23,8 @@ chunks
 estructuras-homogéneas
 estructuras-heterogéneas
 indexación
-funciones-básicas-familia-apply
 programando-funciones
+funciones-básicas-familia-apply
 bucles-y-condiciones
 importación-de-datos-y-exploración
 gramática-de-datos-y-estadística-descriptiva

@@ -1,0 +1,70 @@
+#####################
+# Objetivo: Introducción a R, estructuras y otros
+# Autor: Alvaro 
+# Fecha: 8/7/2021
+#####################
+#rm() #borrar objetos
+#ls() #listar objetos
+rm(list = ls())
+# asigna objetos / crea variables
+x=6
+x
+x1    =   56  *  89
+x2=34*32
+X1=4
+x3<-89
+87->x4
+x5<-(-2)
+x6<--5
+x4<-100
+
+x4*x6
+y<-log(10)
+rm(x5)#borrar objetos
+
+# clases de objetos
+z1<-50
+class(z1)
+
+z2<-"hola"
+class(z2)
+z3<-"dcbdschbdschbdshcvdsghcvdsghcvsd cdcbjhdbchdscvdsghcvshg"
+
+z4<-TRUE
+class(z4)
+
+45>34
+z5<-(45>34)
+
+12>2
+2>12
+2==12
+12==12
+3!=5 # distinto
+(3>5) & (4==4) # y lógico
+(3>5) | (4==4) # ó lógico
+z6<-(3>5) | (4==4) # ó lógico
+# factor, NULL
+z7<-NULL
+class(z7)
+#########################
+# instalación de librerías 
+
+#librerías en el equipo
+library()# listar las librerías
+library(foreign) # cargar la librería
+library(help=foreign) # ayuda de la librería
+?read.spss()
+#librerías externas
+#install.packages("rmarkdown")
+library(rmarkdown)
+#?installed.packages()
+#require()
+
+
+
+
+
+
+
+

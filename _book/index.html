@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ANÁLISIS DE DATOS ESTADÍSTICOS EN R</title>
   <meta name="description" content="Estos apuntes estan destinado al CURSO: ANÁLISIS DE DATOS ESTADÍSTICOS EN R desarrollado en julio de 2021" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ANÁLISIS DE DATOS ESTADÍSTICOS EN R" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="M.Sc. Álvaro Chirino Gutiérrez" />
 
 
-<meta name="date" content="2021-07-07" />
+<meta name="date" content="2021-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 
 <link rel="next" href="análisis-de-datos-estadísticos-básico-en-r.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -118,6 +120,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 </head>
 
 <body>
@@ -140,20 +165,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#introducción-a-r-e-investigación-reproducible"><i class="fa fa-check"></i><b>1.1</b> Introducción a R e investigación reproducible</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#qué-es-r"><i class="fa fa-check"></i><b>1.1.1</b> ¿Qué es R?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#algo-de-historia-de-r"><i class="fa fa-check"></i><b>1.1.2</b> Algo de historia de R</a></li>
-<li class="chapter" data-level="1.1.3" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#acerca-de-r"><i class="fa fa-check"></i><b>1.1.3</b> Acerca de R</a></li>
-<li class="chapter" data-level="1.1.4" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#qué-es-r-1"><i class="fa fa-check"></i><b>1.1.4</b> ¿Qué es R?</a></li>
-<li class="chapter" data-level="1.1.5" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#algunas-referencias"><i class="fa fa-check"></i><b>1.1.5</b> Algunas referencias</a></li>
-<li class="chapter" data-level="1.1.6" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#rstudio"><i class="fa fa-check"></i><b>1.1.6</b> RStudio</a></li>
-<li class="chapter" data-level="1.1.7" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#instalación-y-usos"><i class="fa fa-check"></i><b>1.1.7</b> Instalación y usos</a></li>
-<li class="chapter" data-level="1.1.8" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#r-básico"><i class="fa fa-check"></i><b>1.1.8</b> R básico</a></li>
-<li class="chapter" data-level="1.1.9" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#investigación-reproducible-con-r-markdown"><i class="fa fa-check"></i><b>1.1.9</b> Investigación reproducible con R Markdown</a></li>
+<li class="chapter" data-level="1.1.2" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#rstudio"><i class="fa fa-check"></i><b>1.1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.1.3" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#instalación-y-usos"><i class="fa fa-check"></i><b>1.1.3</b> Instalación y usos</a></li>
+<li class="chapter" data-level="1.1.4" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#r-básico"><i class="fa fa-check"></i><b>1.1.4</b> R básico</a></li>
+<li class="chapter" data-level="1.1.5" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#investigación-reproducible-con-r-markdown"><i class="fa fa-check"></i><b>1.1.5</b> Investigación reproducible con R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#estructuras-homogéneas"><i class="fa fa-check"></i><b>1.2</b> Estructuras homogéneas</a></li>
 <li class="chapter" data-level="1.3" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#estructuras-heterogéneas"><i class="fa fa-check"></i><b>1.3</b> Estructuras heterogéneas</a></li>
 <li class="chapter" data-level="1.4" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#indexación"><i class="fa fa-check"></i><b>1.4</b> Indexación</a></li>
-<li class="chapter" data-level="1.5" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#funciones-básicas-familia-apply"><i class="fa fa-check"></i><b>1.5</b> Funciones básicas familia apply</a></li>
-<li class="chapter" data-level="1.6" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#programando-funciones"><i class="fa fa-check"></i><b>1.6</b> Programando Funciones</a></li>
+<li class="chapter" data-level="1.5" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#programando-funciones"><i class="fa fa-check"></i><b>1.5</b> Programando Funciones</a></li>
+<li class="chapter" data-level="1.6" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#funciones-básicas-familia-apply"><i class="fa fa-check"></i><b>1.6</b> Funciones básicas familia apply</a></li>
 <li class="chapter" data-level="1.7" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#bucles-y-condiciones"><i class="fa fa-check"></i><b>1.7</b> Bucles y condiciones</a></li>
 <li class="chapter" data-level="1.8" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#importación-de-datos-y-exploración"><i class="fa fa-check"></i><b>1.8</b> Importación de datos y exploración</a></li>
 <li class="chapter" data-level="1.9" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#gramática-de-datos-y-estadística-descriptiva"><i class="fa fa-check"></i><b>1.9</b> Gramática de datos y Estadística descriptiva</a></li>
@@ -185,7 +206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">ANÁLISIS DE DATOS ESTADÍSTICOS EN R</h1>
 <h2 class="subtitle"><em>Postgrado UCB</em></h2>
 <p class="author"><em>M.Sc. Álvaro Chirino Gutiérrez</em></p>
-<p class="date"><em>2021-07-07</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-07-14</em></p>
 </div>
 <div id="prefacio" class="section level1 unnumbered">
 <h1>Prefacio</h1>
@@ -194,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="software-y-acuerdos" class="section level2 unnumbered">
 <h2>Software y acuerdos</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R version 4.0.5 (2021-03-31)
+<pre><code>## R version 4.1.0 (2021-05-18)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 10 x64 (build 19043)
 ## 
@@ -208,21 +229,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [5] LC_TIME=Spanish_Bolivia.1252    
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets 
-## [6] methods   base     
+## [1] stats     graphics  grDevices
+## [4] utils     datasets  methods  
+## [7] base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bookdown_0.21     digest_0.6.27    
-##  [3] R6_2.5.0          jsonlite_1.7.2   
-##  [5] magrittr_2.0.1    evaluate_0.14    
-##  [7] highr_0.8         stringi_1.5.3    
-##  [9] rlang_0.4.10      rstudioapi_0.13  
-## [11] jquerylib_0.1.3   bslib_0.2.4      
-## [13] rmarkdown_2.7     tools_4.0.5      
-## [15] stringr_1.4.0     xfun_0.22        
-## [17] yaml_2.2.1        compiler_4.0.5   
-## [19] htmltools_0.5.1.1 knitr_1.31       
-## [21] sass_0.3.1</code></pre>
+##  [1] compiler_4.1.0    magrittr_2.0.1   
+##  [3] bookdown_0.22     htmltools_0.5.1.1
+##  [5] tools_4.1.0       yaml_2.2.1       
+##  [7] stringi_1.6.2     rmarkdown_2.9    
+##  [9] highr_0.9         knitr_1.33       
+## [11] stringr_1.4.0     xfun_0.24        
+## [13] digest_0.6.27     rlang_0.4.11     
+## [15] evaluate_0.14</code></pre>
 </div>
 <div id="bases-de-datos" class="section level2 unnumbered">
 <h2>Bases de datos</h2>
@@ -264,6 +283,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

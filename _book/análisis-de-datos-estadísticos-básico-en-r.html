@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Análisis de datos estadísticos básico en R | ANÁLISIS DE DATOS ESTADÍSTICOS EN R</title>
   <meta name="description" content="Estos apuntes estan destinado al CURSO: ANÁLISIS DE DATOS ESTADÍSTICOS EN R desarrollado en julio de 2021" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Análisis de datos estadísticos básico en R | ANÁLISIS DE DATOS ESTADÍSTICOS EN R" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="M.Sc. Álvaro Chirino Gutiérrez" />
 
 
-<meta name="date" content="2021-07-07" />
+<meta name="date" content="2021-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -118,6 +120,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 </head>
 
 <body>
@@ -140,20 +165,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#introducción-a-r-e-investigación-reproducible"><i class="fa fa-check"></i><b>1.1</b> Introducción a R e investigación reproducible</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#qué-es-r"><i class="fa fa-check"></i><b>1.1.1</b> ¿Qué es R?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#algo-de-historia-de-r"><i class="fa fa-check"></i><b>1.1.2</b> Algo de historia de R</a></li>
-<li class="chapter" data-level="1.1.3" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#acerca-de-r"><i class="fa fa-check"></i><b>1.1.3</b> Acerca de R</a></li>
-<li class="chapter" data-level="1.1.4" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#qué-es-r-1"><i class="fa fa-check"></i><b>1.1.4</b> ¿Qué es R?</a></li>
-<li class="chapter" data-level="1.1.5" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#algunas-referencias"><i class="fa fa-check"></i><b>1.1.5</b> Algunas referencias</a></li>
-<li class="chapter" data-level="1.1.6" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#rstudio"><i class="fa fa-check"></i><b>1.1.6</b> RStudio</a></li>
-<li class="chapter" data-level="1.1.7" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#instalación-y-usos"><i class="fa fa-check"></i><b>1.1.7</b> Instalación y usos</a></li>
-<li class="chapter" data-level="1.1.8" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#r-básico"><i class="fa fa-check"></i><b>1.1.8</b> R básico</a></li>
-<li class="chapter" data-level="1.1.9" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#investigación-reproducible-con-r-markdown"><i class="fa fa-check"></i><b>1.1.9</b> Investigación reproducible con R Markdown</a></li>
+<li class="chapter" data-level="1.1.2" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#rstudio"><i class="fa fa-check"></i><b>1.1.2</b> RStudio</a></li>
+<li class="chapter" data-level="1.1.3" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#instalación-y-usos"><i class="fa fa-check"></i><b>1.1.3</b> Instalación y usos</a></li>
+<li class="chapter" data-level="1.1.4" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#r-básico"><i class="fa fa-check"></i><b>1.1.4</b> R básico</a></li>
+<li class="chapter" data-level="1.1.5" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#investigación-reproducible-con-r-markdown"><i class="fa fa-check"></i><b>1.1.5</b> Investigación reproducible con R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#estructuras-homogéneas"><i class="fa fa-check"></i><b>1.2</b> Estructuras homogéneas</a></li>
 <li class="chapter" data-level="1.3" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#estructuras-heterogéneas"><i class="fa fa-check"></i><b>1.3</b> Estructuras heterogéneas</a></li>
 <li class="chapter" data-level="1.4" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#indexación"><i class="fa fa-check"></i><b>1.4</b> Indexación</a></li>
-<li class="chapter" data-level="1.5" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#funciones-básicas-familia-apply"><i class="fa fa-check"></i><b>1.5</b> Funciones básicas familia apply</a></li>
-<li class="chapter" data-level="1.6" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#programando-funciones"><i class="fa fa-check"></i><b>1.6</b> Programando Funciones</a></li>
+<li class="chapter" data-level="1.5" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#programando-funciones"><i class="fa fa-check"></i><b>1.5</b> Programando Funciones</a></li>
+<li class="chapter" data-level="1.6" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#funciones-básicas-familia-apply"><i class="fa fa-check"></i><b>1.6</b> Funciones básicas familia apply</a></li>
 <li class="chapter" data-level="1.7" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#bucles-y-condiciones"><i class="fa fa-check"></i><b>1.7</b> Bucles y condiciones</a></li>
 <li class="chapter" data-level="1.8" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#importación-de-datos-y-exploración"><i class="fa fa-check"></i><b>1.8</b> Importación de datos y exploración</a></li>
 <li class="chapter" data-level="1.9" data-path="análisis-de-datos-estadísticos-básico-en-r.html"><a href="análisis-de-datos-estadísticos-básico-en-r.html#gramática-de-datos-y-estadística-descriptiva"><i class="fa fa-check"></i><b>1.9</b> Gramática de datos y Estadística descriptiva</a></li>
@@ -198,9 +219,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="images/ds.jpg" alt="" />
 <p class="caption">Ciencia de datos</p>
 </div>
-</div>
-<div id="algo-de-historia-de-r" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Algo de historia de R</h3>
+<div id="algo-de-historia-de-r" class="section level4" number="1.1.1.1">
+<h4><span class="header-section-number">1.1.1.1</span> Algo de historia de R</h4>
 <ul>
 <li>R es el hermano de S</li>
 <li>S es un lenguaje de programación estadística desarrollado por John Chambers de Bell Labs</li>
@@ -211,8 +231,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>R Fue creado por Ross Ihaka y Robert Gentleman de la University of Auckland, New Zealand</li>
 </ul>
 </div>
-<div id="acerca-de-r" class="section level3" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Acerca de R</h3>
+<div id="acerca-de-r" class="section level4" number="1.1.1.2">
+<h4><span class="header-section-number">1.1.1.2</span> Acerca de R</h4>
 <ul>
 <li>El proyecto R inicio en 1991</li>
 <li>R apareció por primera vez en 1996 como un software de código abierto!</li>
@@ -221,8 +241,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Existen muchas interfaces gráficas de usuario de R libres y comerciales (por ejemplo R Studio y Revolución)</li>
 </ul>
 </div>
-<div id="qué-es-r-1" class="section level3" number="1.1.4">
-<h3><span class="header-section-number">1.1.4</span> ¿Qué es R?</h3>
+<div id="qué-es-r-1" class="section level4" number="1.1.1.3">
+<h4><span class="header-section-number">1.1.1.3</span> ¿Qué es R?</h4>
 <p>R es un conjunto integrado de servicios de software para la manipulación de datos, cálculo y representación gráfica. Incluye:</p>
 <ul>
 <li>instalación sencilla y un fácil almacenamiento de datos</li>
@@ -236,8 +256,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p>Ver <a href="https://www.nytimes.com/2009/01/07/technology/business-computing/07program.html?pagewanted=all&amp;_r=0">NY Times</a> artículo.</p>
 </div>
-<div id="algunas-referencias" class="section level3" number="1.1.5">
-<h3><span class="header-section-number">1.1.5</span> Algunas referencias</h3>
+<div id="algunas-referencias" class="section level4" number="1.1.1.4">
+<h4><span class="header-section-number">1.1.1.4</span> Algunas referencias</h4>
 <ul>
 <li>aRrgh: a newcomer’s (angry) guide to R by Tim Smith and Kevin Ushey</li>
 <li>Introductory Statistics with by Peter Dalgaard</li>
@@ -250,8 +270,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Hadley Wickham’s book</li>
 </ul>
 </div>
-<div id="rstudio" class="section level3" number="1.1.6">
-<h3><span class="header-section-number">1.1.6</span> RStudio</h3>
+</div>
+<div id="rstudio" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> RStudio</h3>
 <p>RStudio es un ambiente libre y abierto de desarrollo de código integrado.</p>
 <ul>
 <li>multiplataforma</li>
@@ -262,8 +283,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Integrado con Git</li>
 </ul>
 </div>
-<div id="instalación-y-usos" class="section level3" number="1.1.7">
-<h3><span class="header-section-number">1.1.7</span> Instalación y usos</h3>
+<div id="instalación-y-usos" class="section level3" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Instalación y usos</h3>
 <ul>
 <li>R-CRAN <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> (elija el Sistema operativo, descargue y siguiente, siguiente…)</li>
 <li>R-Studio <a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a> (elija el Sistema operativo, descargue y siguiente, siguiente…)</li>
@@ -271,8 +292,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Nota: Para actualizar ambos paquetes: descargue la nueva versión e instale (las librerías no sufren cambios).</p>
 </div>
-<div id="r-básico" class="section level3" number="1.1.8">
-<h3><span class="header-section-number">1.1.8</span> R básico</h3>
+<div id="r-básico" class="section level3" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> R básico</h3>
 <p>R es una calculadora demasiado grande</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">123</span><span class="sc">+</span><span class="dv">456</span></span></code></pre></div>
 <pre><code>## [1] 579</code></pre>
@@ -282,8 +303,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 0.3529412</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2443-3434</span></span></code></pre></div>
 <pre><code>## [1] -991</code></pre>
-<div id="lógica-de-los-comandos-en-r" class="section level4" number="1.1.8.1">
-<h4><span class="header-section-number">1.1.8.1</span> Lógica de los comandos en R</h4>
+<div id="lógica-de-los-comandos-en-r" class="section level4" number="1.1.4.1">
+<h4><span class="header-section-number">1.1.4.1</span> Lógica de los comandos en R</h4>
 <p>Como entiende R los comandos</p>
 <blockquote>
 <p>comando(argumentos, argumentos, …)</p>
@@ -308,8 +329,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 5</code></pre>
 <pre><code>## [1] 167</code></pre>
 </div>
-<div id="palabras-reservadas-y-simbolos-especiales-de-r" class="section level4" number="1.1.8.2">
-<h4><span class="header-section-number">1.1.8.2</span> Palabras reservadas y simbolos especiales de R</h4>
+<div id="palabras-reservadas-y-simbolos-especiales-de-r" class="section level4" number="1.1.4.2">
+<h4><span class="header-section-number">1.1.4.2</span> Palabras reservadas y simbolos especiales de R</h4>
 <ul>
 <li>NA: datos perdidos</li>
 <li>NULL: datos nulos</li>
@@ -325,8 +346,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote></li>
 </ul>
 </div>
-<div id="símbolos-lógicos" class="section level4" number="1.1.8.3">
-<h4><span class="header-section-number">1.1.8.3</span> Símbolos Lógicos</h4>
+<div id="símbolos-lógicos" class="section level4" number="1.1.4.3">
+<h4><span class="header-section-number">1.1.4.3</span> Símbolos Lógicos</h4>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">5</span><span class="sc">&gt;</span><span class="dv">6</span>) <span class="co"># negación</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">==</span> <span class="dv">4</span> <span class="co"># igualdad</span></span></code></pre></div>
@@ -346,8 +367,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">&lt;=</span> <span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
-<div id="asignación-o-creación-de-objetos-estructuras-variables" class="section level4" number="1.1.8.4">
-<h4><span class="header-section-number">1.1.8.4</span> Asignación o creación de objetos (estructuras, variables)</h4>
+<div id="asignación-o-creación-de-objetos-estructuras-variables" class="section level4" number="1.1.4.4">
+<h4><span class="header-section-number">1.1.4.4</span> Asignación o creación de objetos (estructuras, variables)</h4>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb37-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="dv">5</span></span>
 <span id="cb37-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb37-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="dv">10</span></span>
 <span id="cb37-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span><span class="ot">-&gt;</span>z</span>
@@ -364,8 +385,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a href="http://adv-r.had.co.nz/">Hadley Wickham’s book</a>
 <a href="https://guiquanz.gitbooks.io/google-cc-style-guide/content/ebook/Naming.html">Naming</a></p>
 </div>
-<div id="clases-en-r" class="section level4" number="1.1.8.5">
-<h4><span class="header-section-number">1.1.8.5</span> Clases en R</h4>
+<div id="clases-en-r" class="section level4" number="1.1.4.5">
+<h4><span class="header-section-number">1.1.4.5</span> Clases en R</h4>
+<ul>
+<li>Numeric</li>
+<li>character</li>
+<li>logical</li>
+<li>NULL</li>
+<li>factor</li>
+</ul>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb42-1" aria-hidden="true" tabindex="-1"></a>y1<span class="ot">&lt;-</span><span class="dv">50</span></span>
 <span id="cb42-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb42-2" aria-hidden="true" tabindex="-1"></a>y2<span class="ot">&lt;-</span><span class="st">&quot;hola&quot;</span></span>
 <span id="cb42-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb42-3" aria-hidden="true" tabindex="-1"></a>y3<span class="ot">&lt;-</span>(<span class="dv">56</span><span class="sc">&gt;</span><span class="dv">60</span>)</span>
@@ -400,24 +428,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># as.character</span></span></code></pre></div>
 </div>
-<div id="algunas-comandos-adicionales" class="section level4" number="1.1.8.6">
-<h4><span class="header-section-number">1.1.8.6</span> Algunas comandos adicionales</h4>
+<div id="algunas-comandos-adicionales" class="section level4" number="1.1.4.6">
+<h4><span class="header-section-number">1.1.4.6</span> Algunas comandos adicionales</h4>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(y) <span class="co"># eliminar objetos</span></span>
 <span id="cb67-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(y1,y2,y3,y4)</span>
 <span id="cb67-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb67-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="co"># listando los objetos en memoria</span></span>
 <span id="cb67-5"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;x&quot;  &quot;x1&quot; &quot;x2&quot; &quot;x3&quot; &quot;x4&quot; &quot;x5&quot; &quot;y5&quot; &quot;z&quot;  &quot;z2&quot;</code></pre>
+<pre><code>## [1] &quot;x&quot;  &quot;x1&quot; &quot;x2&quot; &quot;x3&quot; &quot;x4&quot; &quot;x5&quot; &quot;y5&quot;
+## [8] &quot;z&quot;  &quot;z2&quot;</code></pre>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remover todos los objetos en memoria</span></span>
 <span id="cb69-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div>
 </div>
 </div>
-<div id="investigación-reproducible-con-r-markdown" class="section level3" number="1.1.9">
-<h3><span class="header-section-number">1.1.9</span> Investigación reproducible con R Markdown</h3>
+<div id="investigación-reproducible-con-r-markdown" class="section level3" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Investigación reproducible con R Markdown</h3>
 <p><strong>“R Markdown”</strong> se introdujo por primera vez en el paquete knitr a principios de 2012. La idea era incrustar fragmentos de código (de R u otros) en los documentos de Markdown. De hecho, knitr soportó varios lenguajes de autoría desde el principio además de Markdown, incluidos LaTeX, HTML, AsciiDoc, reStructuredText y Textile.</p>
 <p>Markdown se ha convertido en el formato de documento más popular. La simplicidad de Markdown se destaca claramente entre estos formatos de documentos.</p>
-<div id="instalación" class="section level4" number="1.1.9.1">
-<h4><span class="header-section-number">1.1.9.1</span> Instalación</h4>
+<div id="instalación" class="section level4" number="1.1.5.1">
+<h4><span class="header-section-number">1.1.5.1</span> Instalación</h4>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>)</span>
 <span id="cb70-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb70-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Si se prefiere la versión en desarrollo</span></span>
@@ -427,8 +456,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Si el objetivo es usar Markdown para generar documentos PDF se necesita instalar Latex.</p>
 <p>Existen cheatsheets utiles para usar markdown, como: <a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">cheatsheets</a></p>
 </div>
-<div id="yaml-header" class="section level4" number="1.1.9.2">
-<h4><span class="header-section-number">1.1.9.2</span> YAML Header</h4>
+<div id="yaml-header" class="section level4" number="1.1.5.2">
+<h4><span class="header-section-number">1.1.5.2</span> YAML Header</h4>
 <p>Al inicio del archivo y entre las lineas —</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
 <span id="cb71-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb71-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> Mi documento</span>
@@ -437,8 +466,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb71-5"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb71-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> html_document</span>
 <span id="cb71-6"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
 </div>
-<div id="sintaxis-básica" class="section level4" number="1.1.9.3">
-<h4><span class="header-section-number">1.1.9.3</span> Sintaxis básica</h4>
+<div id="sintaxis-básica" class="section level4" number="1.1.5.3">
+<h4><span class="header-section-number">1.1.5.3</span> Sintaxis básica</h4>
 <p>Énfasis sobre el texto,</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span>italic<span class="sc">*</span>   <span class="er">**</span>bold<span class="sc">**</span></span>
 <span id="cb72-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb72-2" aria-hidden="true" tabindex="-1"></a>_italic_   __bold__</span></code></pre></div>
@@ -477,8 +506,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb78-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb78-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="er">$$</span> equation <span class="sc">$</span><span class="er">$</span></span></code></pre></div>
 </div>
-<div id="tipos-de-documentos" class="section level4" number="1.1.9.4">
-<h4><span class="header-section-number">1.1.9.4</span> Tipos de documentos</h4>
+<div id="tipos-de-documentos" class="section level4" number="1.1.5.4">
+<h4><span class="header-section-number">1.1.5.4</span> Tipos de documentos</h4>
 <ul>
 <li>beamer_presentation</li>
 <li>github_document</li>
@@ -494,8 +523,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>word_document</li>
 </ul>
 </div>
-<div id="chunks" class="section level4" number="1.1.9.5">
-<h4><span class="header-section-number">1.1.9.5</span> Chunks</h4>
+<div id="chunks" class="section level4" number="1.1.5.5">
+<h4><span class="header-section-number">1.1.5.5</span> Chunks</h4>
 <p>Los chunks son entornos que permiten incluir código en R dentro de las distintos tipos de documentos que genera Rmarkdown, los chunks inician con <code>```{r} y termina con ```</code>, también es posible introducir chunks en linea con el texto, esto se logra introduciendo</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb79-1" aria-hidden="true" tabindex="-1"></a>Texto ... <span class="st">`</span><span class="at">r &lt;code&gt;</span><span class="st">`</span> ... texto</span></code></pre></div>
 <p>La parte {r} del chunk sirve para introducir las distintas opciones que va a contener ese chunk, las opciones disponibles son:</p>
@@ -510,18 +539,935 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="estructuras-homogéneas" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Estructuras homogéneas</h2>
+<ul>
+<li>Scalar: un único valor</li>
+</ul>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb80-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb80-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb80-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="st">&quot;hola&quot;</span></span>
+<span id="cb80-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb80-3" aria-hidden="true" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="cn">TRUE</span></span>
+<span id="cb80-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb80-4" aria-hidden="true" tabindex="-1"></a>j<span class="ot">&lt;-</span><span class="cn">FALSE</span></span>
+<span id="cb80-5"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb80-5" aria-hidden="true" tabindex="-1"></a>w<span class="ot">&lt;-</span>F</span></code></pre></div>
+<ul>
+<li>Vectores: Colección de valores simples. Los vectores en R son vectores columna</li>
+</ul>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># definición</span></span>
+<span id="cb81-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-2" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb81-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-3" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">2</span>)</span>
+<span id="cb81-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-4" aria-hidden="true" tabindex="-1"></a>x3<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;hola&quot;</span>,<span class="st">&quot;chau&quot;</span>,<span class="st">&quot;adios&quot;</span>,<span class="st">&quot;hola&quot;</span>)</span>
+<span id="cb81-5"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-5" aria-hidden="true" tabindex="-1"></a>x4<span class="ot">&lt;-</span><span class="fu">c</span>(T,T,T,F,F,F,F,T,F,T,F,F,F)</span>
+<span id="cb81-6"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-6" aria-hidden="true" tabindex="-1"></a>x5<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,T,T,<span class="st">&quot;Hola&quot;</span>)</span>
+<span id="cb81-7"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-7" aria-hidden="true" tabindex="-1"></a>x6<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,T,T,F,F)</span>
+<span id="cb81-8"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-8" aria-hidden="true" tabindex="-1"></a><span class="co"># operaciones con vectores</span></span>
+<span id="cb81-9"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb81-9" aria-hidden="true" tabindex="-1"></a>x1<span class="sc">+</span>x1</span></code></pre></div>
+<pre><code>## [1]  4  8 12</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb83-1" aria-hidden="true" tabindex="-1"></a>x1<span class="sc">+</span>x2 <span class="co"># mal ejemplo</span></span></code></pre></div>
+<pre><code>## Warning in x1 + x2: longer object length
+## is not a multiple of shorter object length</code></pre>
+<pre><code>## [1]  3  6  9  6 11 15  6  6</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb86-1" aria-hidden="true" tabindex="-1"></a>x1<span class="sc">**</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1]  4 16 36</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb88-1" aria-hidden="true" tabindex="-1"></a>x1<span class="sc">/</span>x1</span></code></pre></div>
+<pre><code>## [1] 1 1 1</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb90-1" aria-hidden="true" tabindex="-1"></a>x2<span class="sc">&gt;</span><span class="dv">5</span></span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE  TRUE  TRUE
+## [7] FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(x2) <span class="co"># logaritmo</span></span></code></pre></div>
+<pre><code>## [1] 0.0000000 0.6931472 1.0986123
+## [4] 1.3862944 1.9459101 2.1972246
+## [7] 1.3862944 0.6931472</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(x2) <span class="co"># exponencial</span></span></code></pre></div>
+<pre><code>## [1]    2.718282    7.389056   20.085537
+## [4]   54.598150 1096.633158 8103.083928
+## [7]   54.598150    7.389056</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x2) <span class="co"># raíz cuadrada</span></span></code></pre></div>
+<pre><code>## [1] 1.000000 1.414214 1.732051 2.000000
+## [5] 2.645751 3.000000 2.000000 1.414214</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span>x2</span></code></pre></div>
+<pre><code>## [1]   2   4   8  16 128 512  16   4</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">/</span>x1</span></code></pre></div>
+<pre><code>## [1] 1.0000000 0.5000000 0.3333333</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generando vectores</span></span>
+<span id="cb102-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb102-2" aria-hidden="true" tabindex="-1"></a>v1<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb102-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb102-3" aria-hidden="true" tabindex="-1"></a>v2<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span></span>
+<span id="cb102-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb102-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(v2) <span class="co">#sumar</span></span></code></pre></div>
+<pre><code>## [1] 50005000</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb104-1" aria-hidden="true" tabindex="-1"></a>v3<span class="ot">&lt;-</span><span class="dv">100</span><span class="sc">:</span><span class="dv">1</span></span>
+<span id="cb104-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb104-2" aria-hidden="true" tabindex="-1"></a>v4<span class="ot">&lt;-</span><span class="dv">99</span><span class="sc">:</span><span class="dv">0</span></span>
+<span id="cb104-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb104-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb104-4" aria-hidden="true" tabindex="-1"></a>v5<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">100</span>,<span class="dv">2</span>)</span>
+<span id="cb104-5"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb104-5" aria-hidden="true" tabindex="-1"></a>v6<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.01</span>)</span>
+<span id="cb104-6"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb104-6" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">by=</span><span class="dv">10</span>,<span class="at">to=</span><span class="dv">100</span>,<span class="at">from=</span><span class="sc">-</span><span class="dv">20</span>)<span class="co"># anotando el nombre de los argumentos</span></span></code></pre></div>
+<pre><code>##  [1] -20 -10   0  10  20  30  40  50  60
+## [10]  70  80  90 100</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">20</span>,<span class="dv">100</span>,<span class="dv">10</span>) <span class="co"># respetando el orden de los argumentos</span></span></code></pre></div>
+<pre><code>##  [1] -20 -10   0  10  20  30  40  50  60
+## [10]  70  80  90 100</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb108-1" aria-hidden="true" tabindex="-1"></a>v7<span class="ot">&lt;-</span><span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">100</span>) <span class="co"># repetir algo </span></span>
+<span id="cb108-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb108-2" aria-hidden="true" tabindex="-1"></a>v8<span class="ot">&lt;-</span><span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dv">10</span>)</span>
+<span id="cb108-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb108-3" aria-hidden="true" tabindex="-1"></a>v9<span class="ot">&lt;-</span><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;hola&quot;</span>,<span class="st">&quot;cómo&quot;</span>,<span class="st">&quot;estas&quot;</span>,<span class="st">&quot;?&quot;</span>),<span class="dv">10</span>)</span>
+<span id="cb108-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb108-4" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v8) <span class="co"># conocer el tamaño del vector</span></span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v6) <span class="co"># conocer el tamaño del vector</span></span></code></pre></div>
+<pre><code>## [1] 101</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vectores estadísticos, generación de variables aleatorias</span></span>
+<span id="cb112-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb112-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb112-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">runif</span>(<span class="dv">100</span>,<span class="dv">10</span>,<span class="dv">20</span>)</span>
+<span id="cb112-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 14.37497</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb114-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##   [1] 11.13703 16.22299 16.09275 16.23379
+##   [5] 18.60915 16.40311 10.09496 12.32551
+##   [9] 16.66084 15.14251 16.93591 15.44975
+##  [13] 12.82734 19.23433 12.92316 18.37296
+##  [17] 12.86223 12.66821 11.86723 12.32226
+##  [21] 13.16612 13.02693 11.59046 10.39996
+##  [25] 12.18800 18.10599 15.25698 19.14658
+##  [29] 18.31345 10.45770 14.56091 12.65187
+##  [33] 13.04672 15.07307 11.81096 17.59671
+##  [37] 12.01248 12.58810 19.92150 18.07352
+##  [41] 15.53334 16.46406 13.11824 16.21819
+##  [45] 13.29770 15.01997 16.77095 14.84991
+##  [49] 12.43929 17.65460 10.73780 13.09687
+##  [53] 17.17272 15.04546 11.52999 15.03933
+##  [57] 14.93961 17.51200 11.74650 18.48392
+##  [61] 18.64834 10.41857 13.17182 10.13750
+##  [65] 12.39026 17.06495 13.08095 15.08548
+##  [69] 10.51647 15.64570 11.21480 18.92836
+##  [73] 10.14627 17.83121 10.89961 15.19190
+##  [77] 13.84267 10.70052 13.20644 16.68495
+##  [81] 19.26400 14.71910 11.42615 15.44270
+##  [85] 11.96175 18.98580 13.89500 13.10871
+##  [89] 11.60029 18.96186 11.66394 19.00425
+##  [93] 11.34078 11.31614 11.05288 15.11584
+##  [97] 13.00199 10.26717 13.09647 17.42120</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb116-1" aria-hidden="true" tabindex="-1"></a>z<span class="ot">&lt;-</span><span class="fu">round</span>(x,<span class="dv">10</span>)</span>
+<span id="cb116-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb116-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">100000</span>,<span class="dv">10</span>,<span class="dv">5</span>)</span>
+<span id="cb116-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<ul>
+<li>Matrices</li>
+</ul>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb117-1" aria-hidden="true" tabindex="-1"></a>A<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb117-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span>T)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4</code></pre>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb119-1" aria-hidden="true" tabindex="-1"></a>B<span class="ot">&lt;-</span>A<span class="sc">&gt;=</span><span class="dv">2</span></span>
+<span id="cb119-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb119-2" aria-hidden="true" tabindex="-1"></a>B</span></code></pre></div>
+<pre><code>##       [,1] [,2]
+## [1,] FALSE TRUE
+## [2,]  TRUE TRUE</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;Hola&quot;</span>,<span class="st">&quot;como&quot;</span>, <span class="st">&quot;estan&quot;</span>,<span class="st">&quot;chau&quot;</span>),<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##      [,1]   [,2]   
+## [1,] &quot;Hola&quot; &quot;estan&quot;
+## [2,] &quot;como&quot; &quot;chau&quot;</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;Hola&quot;</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##      [,1]   [,2]
+## [1,] &quot;Hola&quot; &quot;2&quot; 
+## [2,] &quot;1&quot;    &quot;3&quot;</code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">2</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    6
+## [2,]    2    7
+## [3,]    3    8
+## [4,]    4    9
+## [5,]    5   10</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    6    1    6    1
+## [2,]    2    7    2    7    2
+## [3,]    3    8    3    8    3
+## [4,]    4    9    4    9    4
+## [5,]    5   10    5   10    5</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># funciones para crear otras matrices</span></span>
+<span id="cb131-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    0    0    0    0
+## [2,]    0    1    0    0    0
+## [3,]    0    0    1    0    0
+## [4,]    0    0    0    1    0
+## [5,]    0    0    0    0    1</code></pre>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    0    0    0    0
+## [2,]    0    2    0    0    0
+## [3,]    0    0    3    0    0
+## [4,]    0    0    0    4    0
+## [5,]    0    0    0    0    5</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz inversa</span></span>
+<span id="cb135-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb135-2" aria-hidden="true" tabindex="-1"></a>C<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">7</span>),<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb135-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb135-3" aria-hidden="true" tabindex="-1"></a><span class="fu">solve</span>(C)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   -7    3
+## [2,]    5   -2</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">det</span>(C)</span></code></pre></div>
+<pre><code>## [1] -1</code></pre>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># operaciones con matrices</span></span>
+<span id="cb139-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb139-2" aria-hidden="true" tabindex="-1"></a>A<span class="sc">+</span>C</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    3    6
+## [2,]    7   11</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb141-1" aria-hidden="true" tabindex="-1"></a>A<span class="sc">-</span>C</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   -1    0
+## [2,]   -3   -3</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb143-1" aria-hidden="true" tabindex="-1"></a>A<span class="sc">*</span>C <span class="co"># elemento a elemento</span></span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    2    9
+## [2,]   10   28</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb145-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> C <span class="co"># Multiplicación matricial</span></span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   17   24
+## [2,]   24   34</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(C)<span class="co"># transpuesta</span></span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    2    5
+## [2,]    3    7</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb149-1" aria-hidden="true" tabindex="-1"></a>D<span class="ot">&lt;-</span>C <span class="sc">%*%</span> <span class="fu">t</span>(C)     <span class="co"># Simétrica</span></span>
+<span id="cb149-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb149-2" aria-hidden="true" tabindex="-1"></a>C <span class="sc">%*%</span> <span class="fu">solve</span>(C) <span class="co"># Inversa</span></span></code></pre></div>
+<pre><code>##      [,1]          [,2]
+## [1,]    1 -8.881784e-16
+## [2,]    0  1.000000e+00</code></pre>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desc. Matriz</span></span>
+<span id="cb151-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(D)</span></code></pre></div>
+<pre><code>## eigen() decomposition
+## $values
+## [1] 86.98850423  0.01149577
+## 
+## $vectors
+##           [,1]       [,2]
+## [1,] 0.3864358 -0.9223163
+## [2,] 0.9223163  0.3864358</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svd</span>(D)</span></code></pre></div>
+<pre><code>## $d
+## [1] 86.98850423  0.01149577
+## 
+## $u
+##            [,1]       [,2]
+## [1,] -0.3864358 -0.9223163
+## [2,] -0.9223163  0.3864358
+## 
+## $v
+##            [,1]       [,2]
+## [1,] -0.3864358 -0.9223163
+## [2,] -0.9223163  0.3864358</code></pre>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qr</span>(D)</span></code></pre></div>
+<pre><code>## $qr
+##             [,1]         [,2]
+## [1,] -33.6154726 -80.23091122
+## [2,]   0.9221944   0.02974821
+## 
+## $rank
+## [1] 2
+## 
+## $qraux
+## [1] 1.38672668 0.02974821
+## 
+## $pivot
+## [1] 1 2
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;qr&quot;</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(D)</span></code></pre></div>
+<pre><code>## [1] 2 2</code></pre>
+<ul>
+<li>Arrays (Generalización)</li>
+</ul>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">27</span>,<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>))</span></code></pre></div>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]   10   13   16
+## [2,]   11   14   17
+## [3,]   12   15   18
+## 
+## , , 3
+## 
+##      [,1] [,2] [,3]
+## [1,]   19   22   25
+## [2,]   20   23   26
+## [3,]   21   24   27</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">81</span>,<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>))</span></code></pre></div>
+<pre><code>## , , 1, 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## , , 2, 1
+## 
+##      [,1] [,2] [,3]
+## [1,]   10   13   16
+## [2,]   11   14   17
+## [3,]   12   15   18
+## 
+## , , 3, 1
+## 
+##      [,1] [,2] [,3]
+## [1,]   19   22   25
+## [2,]   20   23   26
+## [3,]   21   24   27
+## 
+## , , 1, 2
+## 
+##      [,1] [,2] [,3]
+## [1,]   28   31   34
+## [2,]   29   32   35
+## [3,]   30   33   36
+## 
+## , , 2, 2
+## 
+##      [,1] [,2] [,3]
+## [1,]   37   40   43
+## [2,]   38   41   44
+## [3,]   39   42   45
+## 
+## , , 3, 2
+## 
+##      [,1] [,2] [,3]
+## [1,]   46   49   52
+## [2,]   47   50   53
+## [3,]   48   51   54
+## 
+## , , 1, 3
+## 
+##      [,1] [,2] [,3]
+## [1,]   55   58   61
+## [2,]   56   59   62
+## [3,]   57   60   63
+## 
+## , , 2, 3
+## 
+##      [,1] [,2] [,3]
+## [1,]   64   67   70
+## [2,]   65   68   71
+## [3,]   66   69   72
+## 
+## , , 3, 3
+## 
+##      [,1] [,2] [,3]
+## [1,]   73   76   79
+## [2,]   74   77   80
+## [3,]   75   78   81</code></pre>
 </div>
 <div id="estructuras-heterogéneas" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Estructuras heterogéneas</h2>
+<ul>
+<li>Data frames</li>
+<li>Listas</li>
+</ul>
+<p>Estas estructuras permiten el uso de diferentes tipos de clases u objetos.</p>
+<ul>
+<li>Dataframes (Bases de datos)</li>
+</ul>
+<p>Tiene una estructura similar a una matriz, donde se define que las filas corresponden a observaciones/sujetos y las columnas son variables.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="co">#encuesta en la sala de clases</span></span>
+<span id="cb163-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb163-2" aria-hidden="true" tabindex="-1"></a>id<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">8</span></span>
+<span id="cb163-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb163-3" aria-hidden="true" tabindex="-1"></a>name<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;adriana&quot;</span>,<span class="st">&quot;anahi&quot;</span>,<span class="st">&quot;miguel&quot;</span>,<span class="st">&quot;rayner&quot;</span>,<span class="st">&quot;rebeca&quot;</span>,<span class="st">&quot;sergio&quot;</span>,<span class="st">&quot;vania&quot;</span>,<span class="st">&quot;yoselin&quot;</span>)</span>
+<span id="cb163-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb163-4" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb163-5"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb163-5" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(id,name,mujer)</span>
+<span id="cb163-6"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb163-6" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
+<pre><code>##   id    name mujer
+## 1  1 adriana     1
+## 2  2   anahi     1
+## 3  3  miguel     0
+## 4  4  rayner     0
+## 5  5  rebeca     1
+## 6  6  sergio     0
+## 7  7   vania     1
+## 8  8 yoselin     1</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(bd)</span></code></pre></div>
+<pre><code>## [1] 8 3</code></pre>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bd)<span class="co"># estructura del objeto</span></span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    8 obs. of  3 variables:
+##  $ id   : int  1 2 3 4 5 6 7 8
+##  $ name : chr  &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##  $ mujer: num  1 1 0 0 1 0 1 1</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="co"># incorporando variables</span></span>
+<span id="cb169-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb169-2" aria-hidden="true" tabindex="-1"></a>bd<span class="sc">$</span>edad<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">8</span>,<span class="dv">19</span>,<span class="dv">25</span>),<span class="dv">0</span>)</span>
+<span id="cb169-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb169-3" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
+<pre><code>##   id    name mujer edad
+## 1  1 adriana     1   22
+## 2  2   anahi     1   22
+## 3  3  miguel     0   24
+## 4  4  rayner     0   20
+## 5  5  rebeca     1   23
+## 6  6  sergio     0   21
+## 7  7   vania     1   24
+## 8  8 yoselin     1   21</code></pre>
+<ul>
+<li>Listas
+Las listas en R son de los objetos más poderosos que tiene, ya que permite almacenar todo.</li>
+</ul>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb171-1" aria-hidden="true" tabindex="-1"></a>w1<span class="ot">&lt;-</span><span class="fu">list</span>(bd,bd,C,<span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>,<span class="st">&quot;Hola&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)</span>
+<span id="cb171-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb171-2" aria-hidden="true" tabindex="-1"></a>w1</span></code></pre></div>
+<pre><code>## [[1]]
+##   id    name mujer edad
+## 1  1 adriana     1   22
+## 2  2   anahi     1   22
+## 3  3  miguel     0   24
+## 4  4  rayner     0   20
+## 5  5  rebeca     1   23
+## 6  6  sergio     0   21
+## 7  7   vania     1   24
+## 8  8 yoselin     1   21
+## 
+## [[2]]
+##   id    name mujer edad
+## 1  1 adriana     1   22
+## 2  2   anahi     1   22
+## 3  3  miguel     0   24
+## 4  4  rayner     0   20
+## 5  5  rebeca     1   23
+## 6  6  sergio     0   21
+## 7  7   vania     1   24
+## 8  8 yoselin     1   21
+## 
+## [[3]]
+##      [,1] [,2]
+## [1,]    2    3
+## [2,]    5    7
+## 
+## [[4]]
+##    [1]    1    2    3    4    5    6    7
+##    [8]    8    9   10   11   12   13   14
+##   [15]   15   16   17   18   19   20   21
+##   [22]   22   23   24   25   26   27   28
+##   [29]   29   30   31   32   33   34   35
+##   [36]   36   37   38   39   40   41   42
+##   [43]   43   44   45   46   47   48   49
+##   [50]   50   51   52   53   54   55   56
+##   [57]   57   58   59   60   61   62   63
+##   [64]   64   65   66   67   68   69   70
+##   [71]   71   72   73   74   75   76   77
+##   [78]   78   79   80   81   82   83   84
+##   [85]   85   86   87   88   89   90   91
+##   [92]   92   93   94   95   96   97   98
+##   [99]   99  100  101  102  103  104  105
+##  [106]  106  107  108  109  110  111  112
+##  [113]  113  114  115  116  117  118  119
+##  [120]  120  121  122  123  124  125  126
+##  [127]  127  128  129  130  131  132  133
+##  [134]  134  135  136  137  138  139  140
+##  [141]  141  142  143  144  145  146  147
+##  [148]  148  149  150  151  152  153  154
+##  [155]  155  156  157  158  159  160  161
+##  [162]  162  163  164  165  166  167  168
+##  [169]  169  170  171  172  173  174  175
+##  [176]  176  177  178  179  180  181  182
+##  [183]  183  184  185  186  187  188  189
+##  [190]  190  191  192  193  194  195  196
+##  [197]  197  198  199  200  201  202  203
+##  [204]  204  205  206  207  208  209  210
+##  [211]  211  212  213  214  215  216  217
+##  [218]  218  219  220  221  222  223  224
+##  [225]  225  226  227  228  229  230  231
+##  [232]  232  233  234  235  236  237  238
+##  [239]  239  240  241  242  243  244  245
+##  [246]  246  247  248  249  250  251  252
+##  [253]  253  254  255  256  257  258  259
+##  [260]  260  261  262  263  264  265  266
+##  [267]  267  268  269  270  271  272  273
+##  [274]  274  275  276  277  278  279  280
+##  [281]  281  282  283  284  285  286  287
+##  [288]  288  289  290  291  292  293  294
+##  [295]  295  296  297  298  299  300  301
+##  [302]  302  303  304  305  306  307  308
+##  [309]  309  310  311  312  313  314  315
+##  [316]  316  317  318  319  320  321  322
+##  [323]  323  324  325  326  327  328  329
+##  [330]  330  331  332  333  334  335  336
+##  [337]  337  338  339  340  341  342  343
+##  [344]  344  345  346  347  348  349  350
+##  [351]  351  352  353  354  355  356  357
+##  [358]  358  359  360  361  362  363  364
+##  [365]  365  366  367  368  369  370  371
+##  [372]  372  373  374  375  376  377  378
+##  [379]  379  380  381  382  383  384  385
+##  [386]  386  387  388  389  390  391  392
+##  [393]  393  394  395  396  397  398  399
+##  [400]  400  401  402  403  404  405  406
+##  [407]  407  408  409  410  411  412  413
+##  [414]  414  415  416  417  418  419  420
+##  [421]  421  422  423  424  425  426  427
+##  [428]  428  429  430  431  432  433  434
+##  [435]  435  436  437  438  439  440  441
+##  [442]  442  443  444  445  446  447  448
+##  [449]  449  450  451  452  453  454  455
+##  [456]  456  457  458  459  460  461  462
+##  [463]  463  464  465  466  467  468  469
+##  [470]  470  471  472  473  474  475  476
+##  [477]  477  478  479  480  481  482  483
+##  [484]  484  485  486  487  488  489  490
+##  [491]  491  492  493  494  495  496  497
+##  [498]  498  499  500  501  502  503  504
+##  [505]  505  506  507  508  509  510  511
+##  [512]  512  513  514  515  516  517  518
+##  [519]  519  520  521  522  523  524  525
+##  [526]  526  527  528  529  530  531  532
+##  [533]  533  534  535  536  537  538  539
+##  [540]  540  541  542  543  544  545  546
+##  [547]  547  548  549  550  551  552  553
+##  [554]  554  555  556  557  558  559  560
+##  [561]  561  562  563  564  565  566  567
+##  [568]  568  569  570  571  572  573  574
+##  [575]  575  576  577  578  579  580  581
+##  [582]  582  583  584  585  586  587  588
+##  [589]  589  590  591  592  593  594  595
+##  [596]  596  597  598  599  600  601  602
+##  [603]  603  604  605  606  607  608  609
+##  [610]  610  611  612  613  614  615  616
+##  [617]  617  618  619  620  621  622  623
+##  [624]  624  625  626  627  628  629  630
+##  [631]  631  632  633  634  635  636  637
+##  [638]  638  639  640  641  642  643  644
+##  [645]  645  646  647  648  649  650  651
+##  [652]  652  653  654  655  656  657  658
+##  [659]  659  660  661  662  663  664  665
+##  [666]  666  667  668  669  670  671  672
+##  [673]  673  674  675  676  677  678  679
+##  [680]  680  681  682  683  684  685  686
+##  [687]  687  688  689  690  691  692  693
+##  [694]  694  695  696  697  698  699  700
+##  [701]  701  702  703  704  705  706  707
+##  [708]  708  709  710  711  712  713  714
+##  [715]  715  716  717  718  719  720  721
+##  [722]  722  723  724  725  726  727  728
+##  [729]  729  730  731  732  733  734  735
+##  [736]  736  737  738  739  740  741  742
+##  [743]  743  744  745  746  747  748  749
+##  [750]  750  751  752  753  754  755  756
+##  [757]  757  758  759  760  761  762  763
+##  [764]  764  765  766  767  768  769  770
+##  [771]  771  772  773  774  775  776  777
+##  [778]  778  779  780  781  782  783  784
+##  [785]  785  786  787  788  789  790  791
+##  [792]  792  793  794  795  796  797  798
+##  [799]  799  800  801  802  803  804  805
+##  [806]  806  807  808  809  810  811  812
+##  [813]  813  814  815  816  817  818  819
+##  [820]  820  821  822  823  824  825  826
+##  [827]  827  828  829  830  831  832  833
+##  [834]  834  835  836  837  838  839  840
+##  [841]  841  842  843  844  845  846  847
+##  [848]  848  849  850  851  852  853  854
+##  [855]  855  856  857  858  859  860  861
+##  [862]  862  863  864  865  866  867  868
+##  [869]  869  870  871  872  873  874  875
+##  [876]  876  877  878  879  880  881  882
+##  [883]  883  884  885  886  887  888  889
+##  [890]  890  891  892  893  894  895  896
+##  [897]  897  898  899  900  901  902  903
+##  [904]  904  905  906  907  908  909  910
+##  [911]  911  912  913  914  915  916  917
+##  [918]  918  919  920  921  922  923  924
+##  [925]  925  926  927  928  929  930  931
+##  [932]  932  933  934  935  936  937  938
+##  [939]  939  940  941  942  943  944  945
+##  [946]  946  947  948  949  950  951  952
+##  [953]  953  954  955  956  957  958  959
+##  [960]  960  961  962  963  964  965  966
+##  [967]  967  968  969  970  971  972  973
+##  [974]  974  975  976  977  978  979  980
+##  [981]  981  982  983  984  985  986  987
+##  [988]  988  989  990  991  992  993  994
+##  [995]  995  996  997  998  999 1000
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 9000 entries ]
+## 
+## [[5]]
+## [1] &quot;Hola&quot;
+## 
+## [[6]]
+##    [1]    1    2    3    4    5    6    7
+##    [8]    8    9   10   11   12   13   14
+##   [15]   15   16   17   18   19   20   21
+##   [22]   22   23   24   25   26   27   28
+##   [29]   29   30   31   32   33   34   35
+##   [36]   36   37   38   39   40   41   42
+##   [43]   43   44   45   46   47   48   49
+##   [50]   50   51   52   53   54   55   56
+##   [57]   57   58   59   60   61   62   63
+##   [64]   64   65   66   67   68   69   70
+##   [71]   71   72   73   74   75   76   77
+##   [78]   78   79   80   81   82   83   84
+##   [85]   85   86   87   88   89   90   91
+##   [92]   92   93   94   95   96   97   98
+##   [99]   99  100  101  102  103  104  105
+##  [106]  106  107  108  109  110  111  112
+##  [113]  113  114  115  116  117  118  119
+##  [120]  120  121  122  123  124  125  126
+##  [127]  127  128  129  130  131  132  133
+##  [134]  134  135  136  137  138  139  140
+##  [141]  141  142  143  144  145  146  147
+##  [148]  148  149  150  151  152  153  154
+##  [155]  155  156  157  158  159  160  161
+##  [162]  162  163  164  165  166  167  168
+##  [169]  169  170  171  172  173  174  175
+##  [176]  176  177  178  179  180  181  182
+##  [183]  183  184  185  186  187  188  189
+##  [190]  190  191  192  193  194  195  196
+##  [197]  197  198  199  200  201  202  203
+##  [204]  204  205  206  207  208  209  210
+##  [211]  211  212  213  214  215  216  217
+##  [218]  218  219  220  221  222  223  224
+##  [225]  225  226  227  228  229  230  231
+##  [232]  232  233  234  235  236  237  238
+##  [239]  239  240  241  242  243  244  245
+##  [246]  246  247  248  249  250  251  252
+##  [253]  253  254  255  256  257  258  259
+##  [260]  260  261  262  263  264  265  266
+##  [267]  267  268  269  270  271  272  273
+##  [274]  274  275  276  277  278  279  280
+##  [281]  281  282  283  284  285  286  287
+##  [288]  288  289  290  291  292  293  294
+##  [295]  295  296  297  298  299  300  301
+##  [302]  302  303  304  305  306  307  308
+##  [309]  309  310  311  312  313  314  315
+##  [316]  316  317  318  319  320  321  322
+##  [323]  323  324  325  326  327  328  329
+##  [330]  330  331  332  333  334  335  336
+##  [337]  337  338  339  340  341  342  343
+##  [344]  344  345  346  347  348  349  350
+##  [351]  351  352  353  354  355  356  357
+##  [358]  358  359  360  361  362  363  364
+##  [365]  365  366  367  368  369  370  371
+##  [372]  372  373  374  375  376  377  378
+##  [379]  379  380  381  382  383  384  385
+##  [386]  386  387  388  389  390  391  392
+##  [393]  393  394  395  396  397  398  399
+##  [400]  400  401  402  403  404  405  406
+##  [407]  407  408  409  410  411  412  413
+##  [414]  414  415  416  417  418  419  420
+##  [421]  421  422  423  424  425  426  427
+##  [428]  428  429  430  431  432  433  434
+##  [435]  435  436  437  438  439  440  441
+##  [442]  442  443  444  445  446  447  448
+##  [449]  449  450  451  452  453  454  455
+##  [456]  456  457  458  459  460  461  462
+##  [463]  463  464  465  466  467  468  469
+##  [470]  470  471  472  473  474  475  476
+##  [477]  477  478  479  480  481  482  483
+##  [484]  484  485  486  487  488  489  490
+##  [491]  491  492  493  494  495  496  497
+##  [498]  498  499  500  501  502  503  504
+##  [505]  505  506  507  508  509  510  511
+##  [512]  512  513  514  515  516  517  518
+##  [519]  519  520  521  522  523  524  525
+##  [526]  526  527  528  529  530  531  532
+##  [533]  533  534  535  536  537  538  539
+##  [540]  540  541  542  543  544  545  546
+##  [547]  547  548  549  550  551  552  553
+##  [554]  554  555  556  557  558  559  560
+##  [561]  561  562  563  564  565  566  567
+##  [568]  568  569  570  571  572  573  574
+##  [575]  575  576  577  578  579  580  581
+##  [582]  582  583  584  585  586  587  588
+##  [589]  589  590  591  592  593  594  595
+##  [596]  596  597  598  599  600  601  602
+##  [603]  603  604  605  606  607  608  609
+##  [610]  610  611  612  613  614  615  616
+##  [617]  617  618  619  620  621  622  623
+##  [624]  624  625  626  627  628  629  630
+##  [631]  631  632  633  634  635  636  637
+##  [638]  638  639  640  641  642  643  644
+##  [645]  645  646  647  648  649  650  651
+##  [652]  652  653  654  655  656  657  658
+##  [659]  659  660  661  662  663  664  665
+##  [666]  666  667  668  669  670  671  672
+##  [673]  673  674  675  676  677  678  679
+##  [680]  680  681  682  683  684  685  686
+##  [687]  687  688  689  690  691  692  693
+##  [694]  694  695  696  697  698  699  700
+##  [701]  701  702  703  704  705  706  707
+##  [708]  708  709  710  711  712  713  714
+##  [715]  715  716  717  718  719  720  721
+##  [722]  722  723  724  725  726  727  728
+##  [729]  729  730  731  732  733  734  735
+##  [736]  736  737  738  739  740  741  742
+##  [743]  743  744  745  746  747  748  749
+##  [750]  750  751  752  753  754  755  756
+##  [757]  757  758  759  760  761  762  763
+##  [764]  764  765  766  767  768  769  770
+##  [771]  771  772  773  774  775  776  777
+##  [778]  778  779  780  781  782  783  784
+##  [785]  785  786  787  788  789  790  791
+##  [792]  792  793  794  795  796  797  798
+##  [799]  799  800  801  802  803  804  805
+##  [806]  806  807  808  809  810  811  812
+##  [813]  813  814  815  816  817  818  819
+##  [820]  820  821  822  823  824  825  826
+##  [827]  827  828  829  830  831  832  833
+##  [834]  834  835  836  837  838  839  840
+##  [841]  841  842  843  844  845  846  847
+##  [848]  848  849  850  851  852  853  854
+##  [855]  855  856  857  858  859  860  861
+##  [862]  862  863  864  865  866  867  868
+##  [869]  869  870  871  872  873  874  875
+##  [876]  876  877  878  879  880  881  882
+##  [883]  883  884  885  886  887  888  889
+##  [890]  890  891  892  893  894  895  896
+##  [897]  897  898  899  900  901  902  903
+##  [904]  904  905  906  907  908  909  910
+##  [911]  911  912  913  914  915  916  917
+##  [918]  918  919  920  921  922  923  924
+##  [925]  925  926  927  928  929  930  931
+##  [932]  932  933  934  935  936  937  938
+##  [939]  939  940  941  942  943  944  945
+##  [946]  946  947  948  949  950  951  952
+##  [953]  953  954  955  956  957  958  959
+##  [960]  960  961  962  963  964  965  966
+##  [967]  967  968  969  970  971  972  973
+##  [974]  974  975  976  977  978  979  980
+##  [981]  981  982  983  984  985  986  987
+##  [988]  988  989  990  991  992  993  994
+##  [995]  995  996  997  998  999 1000
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 999000 entries ]</code></pre>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(w1)</span></code></pre></div>
+<pre><code>## List of 6
+##  $ :&#39;data.frame&#39;:    8 obs. of  4 variables:
+##   ..$ id   : int [1:8] 1 2 3 4 5 6 7 8
+##   ..$ name : chr [1:8] &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##   ..$ mujer: num [1:8] 1 1 0 0 1 0 1 1
+##   ..$ edad : num [1:8] 22 22 24 20 23 21 24 21
+##  $ :&#39;data.frame&#39;:    8 obs. of  4 variables:
+##   ..$ id   : int [1:8] 1 2 3 4 5 6 7 8
+##   ..$ name : chr [1:8] &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##   ..$ mujer: num [1:8] 1 1 0 0 1 0 1 1
+##   ..$ edad : num [1:8] 22 22 24 20 23 21 24 21
+##  $ : num [1:2, 1:2] 2 5 3 7
+##  $ : int [1:10000] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ : chr &quot;Hola&quot;
+##  $ : int [1:1000000] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">object.size</span>(w1)<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span></span></code></pre></div>
+<pre><code>## 4 bytes</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb177-1" aria-hidden="true" tabindex="-1"></a>w2<span class="ot">&lt;-</span><span class="fu">list</span>(w1,w1,<span class="fu">list</span>(w1,C),C,<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>) <span class="co"># R puede encapsular objetos de tipo</span></span>
+<span id="cb177-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(w2)</span></code></pre></div>
+<pre><code>## List of 5
+##  $ :List of 6
+##   ..$ :&#39;data.frame&#39;: 8 obs. of  4 variables:
+##   .. ..$ id   : int [1:8] 1 2 3 4 5 6 7 8
+##   .. ..$ name : chr [1:8] &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##   .. ..$ mujer: num [1:8] 1 1 0 0 1 0 1 1
+##   .. ..$ edad : num [1:8] 22 22 24 20 23 21 24 21
+##   ..$ :&#39;data.frame&#39;: 8 obs. of  4 variables:
+##   .. ..$ id   : int [1:8] 1 2 3 4 5 6 7 8
+##   .. ..$ name : chr [1:8] &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##   .. ..$ mujer: num [1:8] 1 1 0 0 1 0 1 1
+##   .. ..$ edad : num [1:8] 22 22 24 20 23 21 24 21
+##   ..$ : num [1:2, 1:2] 2 5 3 7
+##   ..$ : int [1:10000] 1 2 3 4 5 6 7 8 9 10 ...
+##   ..$ : chr &quot;Hola&quot;
+##   ..$ : int [1:1000000] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ :List of 6
+##   ..$ :&#39;data.frame&#39;: 8 obs. of  4 variables:
+##   .. ..$ id   : int [1:8] 1 2 3 4 5 6 7 8
+##   .. ..$ name : chr [1:8] &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##   .. ..$ mujer: num [1:8] 1 1 0 0 1 0 1 1
+##   .. ..$ edad : num [1:8] 22 22 24 20 23 21 24 21
+##   ..$ :&#39;data.frame&#39;: 8 obs. of  4 variables:
+##   .. ..$ id   : int [1:8] 1 2 3 4 5 6 7 8
+##   .. ..$ name : chr [1:8] &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##   .. ..$ mujer: num [1:8] 1 1 0 0 1 0 1 1
+##   .. ..$ edad : num [1:8] 22 22 24 20 23 21 24 21
+##   ..$ : num [1:2, 1:2] 2 5 3 7
+##   ..$ : int [1:10000] 1 2 3 4 5 6 7 8 9 10 ...
+##   ..$ : chr &quot;Hola&quot;
+##   ..$ : int [1:1000000] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ :List of 2
+##   ..$ :List of 6
+##   .. ..$ :&#39;data.frame&#39;:  8 obs. of  4 variables:
+##   .. .. ..$ id   : int [1:8] 1 2 3 4 5 6 7 8
+##   .. .. ..$ name : chr [1:8] &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##   .. .. ..$ mujer: num [1:8] 1 1 0 0 1 0 1 1
+##   .. .. ..$ edad : num [1:8] 22 22 24 20 23 21 24 21
+##   .. ..$ :&#39;data.frame&#39;:  8 obs. of  4 variables:
+##   .. .. ..$ id   : int [1:8] 1 2 3 4 5 6 7 8
+##   .. .. ..$ name : chr [1:8] &quot;adriana&quot; &quot;anahi&quot; &quot;miguel&quot; &quot;rayner&quot; ...
+##   .. .. ..$ mujer: num [1:8] 1 1 0 0 1 0 1 1
+##   .. .. ..$ edad : num [1:8] 22 22 24 20 23 21 24 21
+##   .. ..$ : num [1:2, 1:2] 2 5 3 7
+##   .. ..$ : int [1:10000] 1 2 3 4 5 6 7 8 9 10 ...
+##   .. ..$ : chr &quot;Hola&quot;
+##   .. ..$ : int [1:1000000] 1 2 3 4 5 6 7 8 9 10 ...
+##   ..$ : num [1:2, 1:2] 2 5 3 7
+##  $ : num [1:2, 1:2] 2 5 3 7
+##  $ : int [1:1000] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">object.size</span>(w2)<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span></span></code></pre></div>
+<pre><code>## 12.1 bytes</code></pre>
 </div>
 <div id="indexación" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Indexación</h2>
+<p>Es el proceso de manejar los elementos dentro de los objetos.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="co">#VECTORES</span></span>
+<span id="cb181-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb181-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb181-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb181-3" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">7</span>)]</span></code></pre></div>
+<pre><code>## [1] 1 5 7</code></pre>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb183-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">7</span>)]</span></code></pre></div>
+<pre><code>##  [1]   2   3   4   6   8   9  10  11  12
+## [10]  13  14  15  16  17  18  19  20  21
+## [19]  22  23  24  25  26  27  28  29  30
+## [28]  31  32  33  34  35  36  37  38  39
+## [37]  40  41  42  43  44  45  46  47  48
+## [46]  49  50  51  52  53  54  55  56  57
+## [55]  58  59  60  61  62  63  64  65  66
+## [64]  67  68  69  70  71  72  73  74  75
+## [73]  76  77  78  79  80  81  82  83  84
+## [82]  85  86  87  88  89  90  91  92  93
+## [91]  94  95  96  97  98  99 100</code></pre>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb185-1" aria-hidden="true" tabindex="-1"></a>o<span class="ot">&lt;-</span>(x <span class="sc">%%</span> <span class="dv">2</span>)<span class="sc">==</span><span class="dv">0</span></span>
+<span id="cb185-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb185-2" aria-hidden="true" tabindex="-1"></a>x[o]</span></code></pre></div>
+<pre><code>##  [1]   2   4   6   8  10  12  14  16  18
+## [10]  20  22  24  26  28  30  32  34  36
+## [19]  38  40  42  44  46  48  50  52  54
+## [28]  56  58  60  62  64  66  68  70  72
+## [37]  74  76  78  80  82  84  86  88  90
+## [46]  92  94  96  98 100</code></pre>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb187-1" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">4</span>)</span>
+<span id="cb187-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb187-2" aria-hidden="true" tabindex="-1"></a>x2[<span class="fu">c</span>(T,T,F,F)]</span></code></pre></div>
+<pre><code>## [1] 2 3</code></pre>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="co">#matrices</span></span>
+<span id="cb189-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb189-2" aria-hidden="true" tabindex="-1"></a>A<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
+<span id="cb189-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb189-3" aria-hidden="true" tabindex="-1"></a>A[ <span class="dv">3</span>, <span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## [1] 18</code></pre>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb191-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">3</span>, ]</span></code></pre></div>
+<pre><code>## [1]  3  8 13 18 23 28</code></pre>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb193-1" aria-hidden="true" tabindex="-1"></a>A[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), ]</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    6   11   16   21   26
+## [2,]    4    9   14   19   24   29</code></pre>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb195-1" aria-hidden="true" tabindex="-1"></a>A[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span> ]</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    6
+## [2,]    2    7
+## [3,]    3    8
+## [4,]    4    9
+## [5,]    5   10</code></pre>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb197-1" aria-hidden="true" tabindex="-1"></a>A[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) ]</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]   11   16   21   26
+## [2,]   12   17   22   27
+## [3,]   13   18   23   28
+## [4,]   14   19   24   29
+## [5,]   15   20   25   30</code></pre>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb199-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    3   13
+## [2,]    4   14</code></pre>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb201-1" aria-hidden="true" tabindex="-1"></a>A[<span class="fu">c</span>(T,T,F,T,T),<span class="fu">c</span>(T,F,T,T,T,F)]</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1   11   16   21
+## [2,]    2   12   17   22
+## [3,]    4   14   19   24
+## [4,]    5   15   20   25</code></pre>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="co">#data frame</span></span>
+<span id="cb203-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb203-2" aria-hidden="true" tabindex="-1"></a>bd[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span></code></pre></div>
+<pre><code>##      name mujer
+## 1 adriana     1
+## 2   anahi     1
+## 3  miguel     0</code></pre>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># también es posible usar el nombre de las variables </span></span>
+<span id="cb205-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb205-2" aria-hidden="true" tabindex="-1"></a>bd[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="fu">c</span>(<span class="st">&quot;name&quot;</span>,<span class="st">&quot;id&quot;</span>)]</span></code></pre></div>
+<pre><code>##      name id
+## 1 adriana  1
+## 2   anahi  2
+## 3  miguel  3
+## 4  rayner  4
+## 5  rebeca  5
+## 6  sergio  6</code></pre>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb207-1" aria-hidden="true" tabindex="-1"></a>bd[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span>)]</span></code></pre></div>
+<pre><code>##   id    name edad
+## 1  1 adriana   22
+## 2  2   anahi   22
+## 3  3  miguel   24
+## 4  4  rayner   20
+## 5  5  rebeca   23
+## 6  6  sergio   21
+## 7  7   vania   24
+## 8  8 yoselin   21</code></pre>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb209-1" aria-hidden="true" tabindex="-1"></a>bd<span class="sc">$</span>mujer</span></code></pre></div>
+<pre><code>## [1] 1 1 0 0 1 0 1 1</code></pre>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>mujer)</span></code></pre></div>
+<pre><code>## [1] 0.625</code></pre>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb213-1" aria-hidden="true" tabindex="-1"></a>bd[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">8</span>),]</span></code></pre></div>
+<pre><code>##   id    name mujer edad
+## 2  2   anahi     1   22
+## 6  6  sergio     0   21
+## 8  8 yoselin     1   21</code></pre>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb215-1" aria-hidden="true" tabindex="-1"></a>bd[bd<span class="sc">$</span>edad<span class="sc">&lt;=</span><span class="dv">21</span> <span class="sc">&amp;</span> bd<span class="sc">$</span>mujer<span class="sc">==</span><span class="dv">1</span>,]</span></code></pre></div>
+<pre><code>##   id    name mujer edad
+## 8  8 yoselin     1   21</code></pre>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="co">#bd %&gt;% filter(mujer==1 &amp; edad&lt;=21)</span></span></code></pre></div>
 </div>
-<div id="funciones-básicas-familia-apply" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Funciones básicas familia apply</h2>
+<div id="programando-funciones" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Programando Funciones</h2>
+<p>Una función en R tiene la misma idea de lo que realiza una función en cálculo <span class="math inline">\(f(x)=y\)</span>, <span class="math inline">\(f(x)=x^2=y\)</span>, <span class="math inline">\(f(x,y)=.()\)</span>.</p>
+<p>Estructura básica de una función en R.</p>
+<ul>
+<li>El nombre de la función (<span class="math inline">\(f\)</span>)</li>
+<li>Los argumentos <span class="math inline">\(X,Y,\ldots\)</span></li>
+<li>Los procedimientos dentro de la función</li>
+<li>Las salidas <span class="math inline">\(y\)</span></li>
+</ul>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-1" aria-hidden="true" tabindex="-1"></a>nombrefuncion<span class="ot">&lt;-</span><span class="cf">function</span>(x){</span>
+<span id="cb218-2"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Hola&quot;</span>)<span class="co">#procedimiento 1</span></span>
+<span id="cb218-3"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-3" aria-hidden="true" tabindex="-1"></a>  y<span class="ot">&lt;-</span>x<span class="sc">^</span><span class="dv">2</span> <span class="co">#procedimiento 2</span></span>
+<span id="cb218-4"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
+<span id="cb218-5"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb218-6"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-6" aria-hidden="true" tabindex="-1"></a><span class="fu">nombrefuncion</span>(<span class="at">x=</span><span class="dv">2</span>)</span>
+<span id="cb218-7"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nombrefuncion</span>(<span class="at">x=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb218-8"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-9"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-9" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">nombrefuncion</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
+<span id="cb218-10"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-10" aria-hidden="true" tabindex="-1"></a>x2</span>
+<span id="cb218-11"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-11" aria-hidden="true" tabindex="-1"></a>x3<span class="ot">&lt;-</span><span class="fu">nombrefuncion</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb218-12"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-12" aria-hidden="true" tabindex="-1"></a>x3</span>
+<span id="cb218-13"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-13" aria-hidden="true" tabindex="-1"></a><span class="do">###### funciones matemáticas</span></span>
+<span id="cb218-14"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-14" aria-hidden="true" tabindex="-1"></a>ff<span class="ot">&lt;-</span><span class="cf">function</span>(x){</span>
+<span id="cb218-15"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-15" aria-hidden="true" tabindex="-1"></a>  y<span class="ot">&lt;-</span>x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb218-16"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
+<span id="cb218-17"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb218-18"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-18" aria-hidden="true" tabindex="-1"></a>gg<span class="ot">&lt;-</span><span class="cf">function</span>(x){</span>
+<span id="cb218-19"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-19" aria-hidden="true" tabindex="-1"></a>  y<span class="ot">&lt;-</span><span class="fu">log</span>(x)</span>
+<span id="cb218-20"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
+<span id="cb218-21"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb218-22"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-22" aria-hidden="true" tabindex="-1"></a>hh<span class="ot">&lt;-</span><span class="cf">function</span>(x){</span>
+<span id="cb218-23"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-23" aria-hidden="true" tabindex="-1"></a>  y<span class="ot">&lt;-</span><span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb218-24"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
+<span id="cb218-25"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb218-26"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-26" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(ff,<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">10</span>))</span>
+<span id="cb218-27"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-27" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(gg,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>))</span>
+<span id="cb218-28"><a href="análisis-de-datos-estadísticos-básico-en-r.html#cb218-28" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(hh,<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">10</span>))</span></code></pre></div>
+<p>Ejemplo, desarrolle una función que dado un vector numérico de valores enteros, devuelva;</p>
+<ul>
+<li>La suma de los números pares</li>
+<li>La suma del vector</li>
+<li>Coeficiente de variación del vector</li>
+</ul>
 </div>
-<div id="programando-funciones" class="section level2" number="1.6">
-<h2><span class="header-section-number">1.6</span> Programando Funciones</h2>
+<div id="funciones-básicas-familia-apply" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Funciones básicas familia apply</h2>
+<ul>
+<li>apply()</li>
+<li>eapply()</li>
+<li>lapply()</li>
+<li>mapply()</li>
+<li>rapply()</li>
+<li>sapply()</li>
+<li>tapply()</li>
+<li>vapply()</li>
+</ul>
+<p>Todas las funciones de esta familia tienen una característica en común: reciben como argumentos a un objeto y al menos una función</p>
 </div>
 <div id="bucles-y-condiciones" class="section level2" number="1.7">
 <h2><span class="header-section-number">1.7</span> Bucles y condiciones</h2>
@@ -551,19 +1497,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.15</span> Flexdashboard</h2>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-R-rmarkdown" class="csl-entry">
+<div class="csl-entry">
 Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
 </div>
-<div id="ref-R-base" class="csl-entry">
+<div class="csl-entry">
 R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
-<div id="ref-R-knitr" class="csl-entry">
+<div class="csl-entry">
 Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.
 </div>
-<div id="ref-R-bookdown" class="csl-entry">
+<div class="csl-entry">
 ———. 2020. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
 </div>
-<div id="ref-Xie2018" class="csl-entry">
+<div class="csl-entry">
 Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <span>“<span class="nocase">How to Read This Book</span>.”</span> <em>Transforming Climate Finance and Green Investment with Blockchains</em>, 1. <a href="https://doi.org/10.1016/b978-0-12-814447-3.00041-0">https://doi.org/10.1016/b978-0-12-814447-3.00041-0</a>.
 </div>
 </div>
@@ -598,6 +1544,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

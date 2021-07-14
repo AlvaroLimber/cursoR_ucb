@@ -1,0 +1,37 @@
+h1:análisis-de-datos-estadísticos-básico-en-r Análisis de datos estadísticos básico en R
+h2:introducción-a-r-e-investigación-reproducible Introducción a R e investigación reproducible
+h3:qué-es-r ¿Qué es R?
+h4:algo-de-historia-de-r Algo de historia de R
+h4:acerca-de-r Acerca de R
+h4:qué-es-r-1 ¿Qué es R?
+h4:algunas-referencias Algunas referencias
+h3:rstudio RStudio
+h3:instalación-y-usos Instalación y usos
+h3:r-básico R básico
+h4:lógica-de-los-comandos-en-r Lógica de los comandos en R
+h4:palabras-reservadas-y-simbolos-especiales-de-r Palabras reservadas y simbolos especiales de R
+h4:símbolos-lógicos Símbolos Lógicos
+h4:asignación-o-creación-de-objetos-estructuras-variables Asignación o creación de objetos (estructuras, variables)
+h4:clases-en-r Clases en R
+h4:algunas-comandos-adicionales Algunas comandos adicionales
+h3:investigación-reproducible-con-r-markdown Investigación reproducible con R Markdown
+h4:instalación Instalación
+h4:yaml-header YAML Header
+h4:sintaxis-básica Sintaxis básica
+h4:tipos-de-documentos Tipos de documentos
+h4:chunks Chunks
+h2:estructuras-homogéneas Estructuras homogéneas
+h2:estructuras-heterogéneas Estructuras heterogéneas
+h2:indexación Indexación
+h2:programando-funciones Programando Funciones
+h2:funciones-básicas-familia-apply Funciones básicas familia apply
+h2:bucles-y-condiciones Bucles y condiciones
+h2:importación-de-datos-y-exploración Importación de datos y exploración
+h2:gramática-de-datos-y-estadística-descriptiva Gramática de datos y Estadística descriptiva
+h2:estimación-de-encuestas-por-muestreo Estimación de encuestas por muestreo
+h2:gráficos-con-r-base Gráficos con R base
+h2:gráficos-con-ggplot-1 Gráficos con ggplot 1
+h2:gráficos-con-ggplot-2 Gráficos con ggplot 2
+h2:rmarkdown Rmarkdown
+h2:flexdashboard Flexdashboard
+
