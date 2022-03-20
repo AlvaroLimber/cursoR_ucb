@@ -1,0 +1,101 @@
+rm(list=ls())
+#######################
+library(ggplot2)
+library(dplyr)
+library(foreign)
+#directorios de trabajo
+dir_data<-"G:\\Mi unidad\\cursoR_UCB\\data"
+dir_salida<-"C:\\Users\\ALVARO\\Desktop\\salida"
+#####################
+setwd(dir_data)
+computo<-read.csv("computo2020.csv",quote = "")
+eh20p<-read.spss("EH2020_Persona.sav",to.data.frame = T)
+#####################
+# 1 variable cuanti
+ggplot(eh20p,aes(s01a_03)) +geom_histogram()
+ggplot(eh20p,aes(s01a_03)) +geom_boxplot()
+ggplot(eh20p,aes(s01a_03)) +geom_density()
+# 2 variables cuanti
+ggplot(eh20p,aes(s01a_03,log(ylab)))+geom_point()+
+  geom_smooth(method = "lm")
+# +2 variables 
+ggplot(eh20p,aes(s01a_03,log(ylab),shape=s01a_02))+
+  geom_point()
+
+ggplot(eh20p,aes(s01a_03,log(ylab),col=s01a_02))+
+  geom_point()
+
+ggplot(eh20p,aes(s01a_03,log(ylab),col=s01a_02,
+   shape=area))+geom_point()
+
+ggplot(eh20p,aes(s01a_03,log(ylab),col=s01a_02,
+  shape=area,size=aestudio))+geom_point()
+
+ggplot(eh20p,aes(s01a_03,aestudio,col=s01a_02,
+                 shape=area,size=ylab))+geom_point()
+
+ggplot(eh20p,aes(s01a_03,log(ylab),col=s01a_02,
+ shape=area,size=ynolab))+geom_point()+
+  facet_wrap(~depto)
+
+ggplot(eh20p %>% filter(caeb_op==unique(eh20p$caeb_op)[7]),
+      aes(s01a_03,log(ylab),col=s01a_02,
+shape=area,size=ynolab))+geom_point()+facet_wrap(~depto)
+
+# 2 variables cuanti cuali
+
+ggplot(eh20p %>% filter(s01a_03>=15),aes(ylab,s01a_02))+
+  geom_boxplot()
+
+ggplot(eh20p %>% filter(s01a_03>=15),aes(s01a_02,log(ylab)))+
+  geom_boxplot()
+
+ggplot(eh20p %>% filter(s01a_03>=15),aes(s01a_02,aestudio))+
+  geom_violin()
+
+ggplot(eh20p %>% filter(s01a_03>=15),aes(s01a_02,aestudio))+
+  geom_jitter()
+
+ggplot(eh20p %>% filter(s01a_03>=15),aes(s01a_02,aestudio))+
+  geom_jitter()+facet_wrap(~area)
+
+ggplot(eh20p %>% filter(s01a_03>=15),aes(s01a_02,aestudio))+
+  geom_violin()+facet_wrap(~area+depto)
+
+#1 cuali
+
+ggplot(eh20p,aes(depto))+geom_bar(col="black",fill="darkblue",
+            alpha=0.3)+facet_wrap(~s01a_02)
+
+
+g1<-ggplot(eh20p,aes(depto))+geom_bar(col="black",fill="darkblue",
+  alpha=0.3)+ggtitle("Muestra por departamento")+
+  ylab("Frecuencia")+xlab("Departamento")+ylim(0,10000)
+
+library(plotly)
+g1<-ggplotly(g1)
+
+library(htmlwidgets)
+saveWidget(g1,"g1.html")
+
+pdf("g1.pdf")
+ggplot(eh20p %>% filter(s01a_03>=15),aes(s01a_02,aestudio))+
+  geom_violin()+facet_wrap(~area+depto)
+dev.off()
+
+library(sf)
+library(ggplot2)
+# shape (dibujo,base de datos,long lati)
+
+st_layers("WFS:https://geo.gob.bo/geoserver/fondos/wfs")
+
+mmun<-st_read("WFS:https://geo.gob.bo/geoserver/fondos/wfs","fondos:municipal")
+
+class(mmun)
+
+ggplot(mmun %>% filter(DEPARTAMEN=="La Paz"))+geom_sf()
+
+
+ggplot(mmun %>% filter(c_ut%in%c("020105","020101","030101")))+
+  geom_sf(col="red",fill="blue",alpha=0.3)
+

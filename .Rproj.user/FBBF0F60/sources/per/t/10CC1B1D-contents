@@ -1,0 +1,79 @@
+rm(list=ls())
+library(sf)
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(forecast)
+
+library(leaflet)
+#directorios de trabajo
+dir_data<-"G:\\Mi unidad\\cursoR_UCB\\data"
+dir_salida<-"C:\\Users\\ALVARO\\Desktop\\salida"
+#############
+#mapas
+#st_layers("WFS:https://geo.gob.bo/geoserver/fondos/wfs")
+mmun<-st_read("WFS:https://geo.gob.bo/geoserver/fondos/wfs","fondos:municipal")
+medu<-st_read("G:\\Mi unidad\\cursoR_UCB\\data\\EstabEducativos\\EstabEducativos.shp")
+#variable
+mmun$index<-rbinom(344,5,0.5)
+
+ggplot(mmun)+geom_sf(aes(fill=index))
+ggplot(mmun %>% filter(DEPARTAMEN=="Tarija"),aes(fill=index))+geom_sf()+
+  scale_fill_gradient2()
+
+ggplot(mmun)+geom_sf(aes(fill=index))+geom_sf(data=medu,aes(col=NOM_DEP))
+
+medu$index<-round(rnorm(14737,200,40),0)
+ggplot(mmun)+geom_sf(aes(fill=index))+geom_sf(data=medu,aes(size=index))
+
+ggplot(mmun %>% filter(DEPARTAMEN=="Pando"))+geom_sf(aes(fill=index))+
+  geom_sf(data=medu %>% filter(NOM_DEP=="Pando"),aes(size=index))+ scale_fill_gradient2()
+
+ggplot(mmun %>% filter(DEPARTAMEN=="La Paz"))+
+  geom_sf(aes(fill=index))+scale_fill_gradient2()
+
+ggplot(mmun %>% filter(DEPARTAMEN=="La Paz"))+
+  geom_sf()+geom_sf(data=medu,aes(col=NOM_DEP))
+  
+ggplot(medu)+geom_sf()
+
+#tiempo
+setwd(dir_data)
+covid<-read.csv("owid-covid-data.csv")
+str(covid$date)
+
+ggplot(covid,aes(date,total_cases,col=iso_code))+geom_line()
+
+covid$date<-ymd(covid$date)
+
+bol<-covid %>% filter(iso_code=="BOL")
+
+ggplot(bol,aes(date,total_cases))+geom_line()
+
+ggplot(bol,aes(date,new_cases))+geom_line()
+
+ggplot(bol,aes(date,total_cases))+geom_line()+
+  geom_line(data=bol,aes(date,new_cases))
+
+ggplot(bol,aes(date,new_cases))+geom_line()+
+  geom_line(data=bol,aes(date,new_deaths),col="darkgreen")
+  
+s1<-ts(bol$new_cases,frequency = 365,
+       start=c(year(bol$date[1]), as.numeric(format(bol$date[1], "%j"))))
+apropos("arima")
+m1<-auto.arima(s1)
+p1<-forecast(m1,100)
+plot(p1)
+
+#Google trends
+install.packages("gtrendsR")
+library(gtrendsR)
+gg<-gtrends(c("sputnik","sinopharm","astrazeneca","dioxido de cloro"),
+            geo="BO",time="today+5-y")
+plot(gg)
+temas<-gtrends(category =c(1164),geo="BO",time="today+5-y")
+plot(temas)
+
+install.packages("flexdashboard")
+library(flexdashboard)
+

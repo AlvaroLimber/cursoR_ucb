@@ -583,6 +583,31 @@ Todas las funciones de esta familia tienen una característica en común: recibe
 ## Importación de datos y exploración
 ## Gramática de datos y Estadística descriptiva
 ## Estimación de encuestas por muestreo
+
+> Parámetro: Medida que se calcula sobre la población
+
+$$\mu_y=\frac{\sum_U y_i}{N}$$
+
+$$t_y=\sum_U y_i$$
+
+
+> Estimador: Medida que trata de aproximarse a un parámetro y calcula en base a la muestra
+
+$$\bar{Y}=\frac{\sum_s y_i}{n}$$
+Estimador de Horvitz Thompson 
+
+$$\hat{t}_y=\sum_s \frac{y_i}{\pi_i}=\sum_s y_i *(\pi_i)^{-1}=\sum_s y_i *w_i$$
+  * Si trabajan con Encuestas por muestreo, se debe contar con el factor de expansión para realizar las estimaciones. A menos que el muestreo sea aleatorio simple.
+  * Si se quiere obtener el error de muestreo de una encuesta para un indicador, es necesario contar con información del diseño muestral, principalmente en encuestas grandes que tienen diseños complejos. Al menos se requiere 2 variables:
+    + Unidad primaria de muestreo. 
+    + Estratificación de primera etapa.
+    
+$$V(\hat{t}_y)=f(y,\pi_i,\pi_{ij},c,h)$$
+  
+  
+  
+
+
 ## Gráficos con R base
 ## Gráficos con ggplot 1
 ## Gráficos con ggplot 2

@@ -1,0 +1,43 @@
+---
+title: "Mi primer dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(sf)
+library(ggplot2)
+library(lubridate)
+library(dplyr)
+medu<-st_read("G:\\Mi unidad\\cursoR_UCB\\data\\EstabEducativos\\EstabEducativos.shp")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Unidades educativas
+
+```{r}
+ggplot(medu)+geom_sf()
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Casos diarios
+
+```{r}
+covid<-read.csv("G:\\Mi unidad\\cursoR_UCB\\data\\owid-covid-data.csv")
+covid$date<-ymd(covid$date)
+bol<-covid %>% filter(iso_code=="BOL")
+ggplot(bol,aes(date,new_cases))+geom_line()
+```
+
+### Muertes diarias
+
+```{r}
+ggplot(bol,aes(date,new_deaths))+geom_line()
+```
